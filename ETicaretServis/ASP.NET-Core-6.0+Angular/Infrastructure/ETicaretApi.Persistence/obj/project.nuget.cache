@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "gRkUBd/nNRJammkeHChXh3kme4C9rv2THnKcnFLQHKkrsRqLUsQ5lmZDOeXEl+BZmpw5fdr0z7hHn/zH1As0FQ==",
+  "dgSpecHash": "a7zITRPN+ndnFOmyPQkR9kBoH1jOWddHcnVfl/HItX1tCmQmftErgXEnqMOXqbg/mldJt3XQY34b4VJzFirJwA==",
   "success": true,
   "projectFilePath": "C:\\Users\\emred\\source\\repos\\emreddirek09\\.NET-Core-6.0-Angular\\ETicaretServis\\ASP.NET-Core-6.0+Angular\\Infrastructure\\ETicaretApi.Persistence\\ETicaretApi.Persistence.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\emred\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

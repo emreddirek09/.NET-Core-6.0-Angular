@@ -1,0 +1,17 @@
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\bin\Debug\net6.0\ETicaretApi.Persistence.deps.json
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\bin\Debug\net6.0\ETicaretApi.Persistence.dll
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\bin\Debug\net6.0\ETicaretApi.Persistence.pdb
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\bin\Debug\net6.0\ETicaretApi.Application.dll
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\bin\Debug\net6.0\ETicaretApi.Domain.dll
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\bin\Debug\net6.0\ETicaretApi.Application.pdb
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\bin\Debug\net6.0\ETicaretApi.Domain.pdb
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\obj\Debug\net6.0\ETicaretApi.Persistence.csproj.AssemblyReference.cache
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\obj\Debug\net6.0\ETicaretApi.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\obj\Debug\net6.0\ETicaretApi.Persistence.AssemblyInfoInputs.cache
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\obj\Debug\net6.0\ETicaretApi.Persistence.AssemblyInfo.cs
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\obj\Debug\net6.0\ETicaretApi.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\obj\Debug\net6.0\ETicaretApi.Persistence.csproj.CopyComplete
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\obj\Debug\net6.0\ETicaretApi.Persistence.dll
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\obj\Debug\net6.0\refint\ETicaretApi.Persistence.dll
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\obj\Debug\net6.0\ETicaretApi.Persistence.pdb
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\obj\Debug\net6.0\ref\ETicaretApi.Persistence.dll

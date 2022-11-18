@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ASP.NET-Core-6.0+Angular\Core\ETicaretApi.Application\ETicaretApi.Application.csproj" />
+  </ItemGroup>
+
 </Project>
