@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ETicaretApi.Infrastructure/1.0.0": {
+        "dependencies": {
+          "ETicaretApi.Application": "1.0.0"
+        },
+        "runtime": {
+          "ETicaretApi.Infrastructure.dll": {}
+        }
+      },
+      "ETicaretApi.Application/1.0.0": {
+        "dependencies": {
+          "ETicaretApi.Domain": "1.0.0"
+        },
+        "runtime": {
+          "ETicaretApi.Application.dll": {}
+        }
+      },
+      "ETicaretApi.Domain/1.0.0": {
+        "runtime": {
+          "ETicaretApi.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ETicaretApi.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ETicaretApi.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ETicaretApi.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

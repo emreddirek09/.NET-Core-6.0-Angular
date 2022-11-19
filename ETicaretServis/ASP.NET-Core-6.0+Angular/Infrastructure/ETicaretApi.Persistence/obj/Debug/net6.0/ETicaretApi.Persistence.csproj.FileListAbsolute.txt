@@ -15,3 +15,5 @@ C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\AS
 C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\obj\Debug\net6.0\refint\ETicaretApi.Persistence.dll
 C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\obj\Debug\net6.0\ETicaretApi.Persistence.pdb
 C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\obj\Debug\net6.0\ref\ETicaretApi.Persistence.dll
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\bin\Debug\net6.0\ETicaretApi.Persistence.runtimeconfig.json
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Infrastructure\ETicaretApi.Persistence\obj\Debug\net6.0\ETicaretApi.Persistence.genruntimeconfig.cache
