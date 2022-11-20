@@ -23,7 +23,7 @@ namespace ETicaretApi.Persistence
 
              */
             //docker run --name PostgreSQL -p 5432:5432 -e POSTGRES_PASSWORD=123456 -d postgres
-            services.AddDbContext<ETicaretApiDbContext>(options => options.UseNpgsql("User ID=postgres;Password=123456;Host=localhost;Port=5432;Database=ETicaretApi;"));
+            services.AddDbContext<ETicaretApiDbContext>(options => options.UseNpgsql("Server=localhost;Database=ETicaretAPIDb;User Id=postgres;Password=123456;"));
 
         }
     }

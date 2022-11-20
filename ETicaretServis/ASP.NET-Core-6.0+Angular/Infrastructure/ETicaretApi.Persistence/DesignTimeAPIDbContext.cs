@@ -26,7 +26,7 @@ namespace ETicaretApi.Persistence
             return new (dbContextOptionsBuilder.Options);
              */
             DbContextOptionsBuilder<ETicaretApiDbContext> dbContextOptionsBuilder = new();
-            dbContextOptionsBuilder.UseNpgsql("User ID=postgres;Password=123456;Host=localhost;Port=5432;Database=ETicaretApi;");
+            dbContextOptionsBuilder.UseNpgsql("Server=localhost;Database=ETicaretAPIDb;User Id=postgres;Password=123456;");
             return new (dbContextOptionsBuilder.Options);
         }
     }
