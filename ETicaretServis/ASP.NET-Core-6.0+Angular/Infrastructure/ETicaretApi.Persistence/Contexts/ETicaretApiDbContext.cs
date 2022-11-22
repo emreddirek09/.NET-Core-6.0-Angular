@@ -1,5 +1,4 @@
-﻿using ETicaretApi.Domain.Entities;
-using ETicaretApi.Persistence.Concretes;
+﻿using ETicaretApi.Domain.Entities; 
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

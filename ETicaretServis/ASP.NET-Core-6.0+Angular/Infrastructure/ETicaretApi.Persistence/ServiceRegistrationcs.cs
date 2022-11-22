@@ -1,4 +1,6 @@
-﻿using ETicaretApi.Persistence.Contexts;
+﻿using ETicaretApi.Application.Repositories;
+using ETicaretApi.Persistence.Contexts;
+using ETicaretApi.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -24,7 +26,12 @@ namespace ETicaretApi.Persistence
              */
             //docker run --name PostgreSQL -p 5432:5432 -e POSTGRES_PASSWORD=123456 -d postgres
             services.AddDbContext<ETicaretApiDbContext>(options => options.UseNpgsql("Server=localhost;Database=ETicaretAPIDb;User Id=postgres;Password=123456;"));
-
+            services.AddScoped<ICustomerReadRepository, CustomerReadRepository>();
+            services.AddScoped<ICustomerWriteRepository, CustomerWriteRepository>();
+            services.AddScoped<IOrderReadRepository, OrderReadRepository>();
+            services.AddScoped<IOrderWriteRepository, OrderWriteRepository>();
+            services.AddScoped<IProductReadRepository, ProductReadRepository>();
+            services.AddScoped<IProductWriteRepository, ProductWriteRepository>();
         }
     }
 }
