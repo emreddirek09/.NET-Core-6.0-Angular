@@ -14,14 +14,14 @@ namespace ETicaretApi.Application.Repositories
 
         //Sorgu üzerinde ise IQueryableIQueryable;
 
-        IQueryable<T> GetAll(); //Hangi türde class ise örneğin protuct gelirse tüm ürünleri verir.
+        IQueryable<T> GetAll(bool tracking=true); //Hangi türde class ise örneğin protuct gelirse tüm ürünleri verir.
 
         //Şarta uygun verileri getiriyor.
-        IQueryable<T> GetWhere(Expression<Func<T, bool>> method);
+        IQueryable<T> GetWhere(Expression<Func<T, bool>> method, bool tracking = true);
 
-        Task<T> GetSingleAsync(Expression<Func<T, bool>> method);
+        Task<T> GetSingleAsync(Expression<Func<T, bool>> method, bool tracking = true);
 
-        public async Task<T> GetByIdAsync(string id) => await Table.FindAsync(id);
+        public async Task<T> GetByIdAsync(string id, bool tracking = true) => await Table.FindAsync(id);
 
         //InMemoryde ise List<>
 

@@ -25,14 +25,18 @@ namespace ETicaretApi.Api.Controllers
         public async Task GetProducts()
         {
 
-            await _productWriteRepository.AddRangeAsync(new()
-            {
-                new (){Id=Guid.NewGuid(),Name="Product 1",Price=100,CreateDate=DateTime.UtcNow,Stock=10},
-                new (){Id=Guid.NewGuid(),Name="Product 2",Price=120,CreateDate=DateTime.UtcNow,Stock=20},
-                new (){Id=Guid.NewGuid(),Name="Product 3",Price=130,CreateDate=DateTime.UtcNow,Stock=15},
-                new (){Id=Guid.NewGuid(),Name="Product 4",Price=140,CreateDate=DateTime.UtcNow,Stock=80}
-            });
-            var count = await _productWriteRepository.SaveAsync();
+            //await _productWriteRepository.AddRangeAsync(new()
+            //{
+            //    new (){Id=Guid.NewGuid(),Name="Product 1",Price=100,CreateDate=DateTime.UtcNow,Stock=10},
+            //    new (){Id=Guid.NewGuid(),Name="Product 2",Price=120,CreateDate=DateTime.UtcNow,Stock=20},
+            //    new (){Id=Guid.NewGuid(),Name="Product 3",Price=130,CreateDate=DateTime.UtcNow,Stock=15},
+            //    new (){Id=Guid.NewGuid(),Name="Product 4",Price=140,CreateDate=DateTime.UtcNow,Stock=80}
+            //});
+            //var count = await _productWriteRepository.SaveAsync();
+
+            Product product = await _productReadRepository.GetByIdAsync("666323d7-e66f-4680-8d74-9a63cf1f0751",false);
+            product.Name = "Erva";
+            await _productWriteRepository.SaveAsync();
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id)
