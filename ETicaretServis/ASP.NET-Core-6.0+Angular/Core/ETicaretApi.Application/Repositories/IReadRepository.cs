@@ -21,7 +21,7 @@ namespace ETicaretApi.Application.Repositories
 
         Task<T> GetSingleAsync(Expression<Func<T, bool>> method, bool tracking = true);
 
-        public async Task<T> GetByIdAsync(string id, bool tracking = true) => await Table.FindAsync(id);
+        Task<T> GetByIdAsync(string id, bool tracking = true);
 
         //InMemoryde ise List<>
 

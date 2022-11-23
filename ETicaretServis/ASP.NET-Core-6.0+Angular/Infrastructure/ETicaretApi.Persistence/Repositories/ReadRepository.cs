@@ -42,7 +42,7 @@ namespace ETicaretApi.Persistence.Repositories
         {
             var query = Table.AsQueryable();
             if (!tracking)
-                query = query.AsNoTracking(); 
+                query = Table.AsNoTracking(); 
             return await query.FirstOrDefaultAsync(method); 
         }
 
@@ -51,8 +51,10 @@ namespace ETicaretApi.Persistence.Repositories
         {
             var query = Table.AsQueryable();
             if(!tracking)
-                query = query.AsNoTracking(); 
-            return await Table.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id)); 
+                query = Table.AsNoTracking();
+#pragma warning disable CS8603 // Possible null reference return.
+            return await query.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id));
+#pragma warning restore CS8603 // Possible null reference return.
 
         }
 

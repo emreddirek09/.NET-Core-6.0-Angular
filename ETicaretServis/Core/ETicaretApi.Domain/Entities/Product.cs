@@ -11,7 +11,7 @@ namespace ETicaretApi.Domain.Entities
     {
         public string Name { get; set; }
         public int Stock { get; set; }
-        public long Price { get; set; }
+        public float Price { get; set; }
 
         //Çok-a Çok ilişkisi için ICollection tanımlanır. Karşılığında çok ilişki olursa diğer classda da aynı ICollection kurulur
         public ICollection<Order> Orders { get; set; }
