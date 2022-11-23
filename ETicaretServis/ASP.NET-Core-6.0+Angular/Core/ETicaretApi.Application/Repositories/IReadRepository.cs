@@ -21,10 +21,10 @@ namespace ETicaretApi.Application.Repositories
 
         Task<T> GetSingleAsync(Expression<Func<T, bool>> method);
 
-        Task<T> GetByIdAsync(string id);
+        public async Task<T> GetByIdAsync(string id) => await Table.FindAsync(id);
 
         //InMemoryde ise List<>
-         
+
 
     }
 }

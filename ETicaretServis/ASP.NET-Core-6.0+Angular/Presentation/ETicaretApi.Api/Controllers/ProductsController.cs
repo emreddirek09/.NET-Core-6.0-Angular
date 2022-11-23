@@ -37,8 +37,8 @@ namespace ETicaretApi.Api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id)
         {
-            Customer customer = await _customerReadRepository.GetByIdAsync(id);
-            return Ok();
+            Product product = await _productReadRepository.GetByIdAsync(id);
+            return Ok(product);
         }
     }
 }
