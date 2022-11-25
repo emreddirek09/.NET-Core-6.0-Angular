@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { CustomeToastrService, ToastrPosition, ToastrServiceMessageTpe } from './services/ui/custome-toastr.service';
 declare var $:any
 
 @Component({
@@ -8,6 +10,10 @@ declare var $:any
 })
 export class AppComponent {
   title = 'ETicaret';
+  constructor(private toastrService: CustomeToastrService){
+    toastrService.message("Merhaba Dünya","Ben Emre"
+    ,{messageType:ToastrServiceMessageTpe.Info,position:ToastrPosition.BottomLeft});
+  }
 }
 
 // $(document).ready((alert("dsasds")))
