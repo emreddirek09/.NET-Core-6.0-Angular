@@ -1,4 +1,5 @@
 ﻿using ETicaretApi.Application.Repositories;
+using ETicaretApi.Application.ViewModels.Products;
 using ETicaretApi.Domain.Entities;
 using ETicaretApi.Persistence.Repositories;
 using Microsoft.AspNetCore.Http;
@@ -12,20 +13,11 @@ namespace ETicaretApi.Api.Controllers
     {
         readonly private IProductWriteRepository _productWriteRepository;
         readonly private IProductReadRepository _productReadRepository;
-        readonly private ICustomerWriteRepository _customerWriteRepository;
-        readonly private ICustomerReadRepository _customerReadRepository;
 
-        readonly private IOrderWriteRepository _orderWriteRepository;
-        readonly private IOrderReadRepository _orderReadRepository;
-
-        public ProductsController(IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository, ICustomerWriteRepository customerWriteRepository, ICustomerReadRepository customerReadRepository, IOrderWriteRepository orderWriteRepository, IOrderReadRepository orderReadRepository)
+        public ProductsController(IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository)
         {
             _productWriteRepository = productWriteRepository;
             _productReadRepository = productReadRepository;
-            _customerWriteRepository = customerWriteRepository;
-            _customerReadRepository = customerReadRepository;
-            _orderWriteRepository = orderWriteRepository;
-            _orderReadRepository = orderReadRepository;
         }
 
         [HttpGet]
@@ -34,7 +26,8 @@ namespace ETicaretApi.Api.Controllers
         //    var customerId = Guid.NewGuid();
         //    _customerWriteRepository.AddAsync(new() { Id = customerId, Name = "Emre" });
         //    _orderWriteRepository.AddAsync(new() { Description = "deneme 1", Address = "Aydın, Efeler", CustomerId = customerId });
-        //    _orderWriteRepository.AddAsync(new() { Description = "deneme 2", Address = "Denizli, Zeytinköy", CustomerId = customerId });
+        //    _orderWriteRepository.AddAsync(new() { Description = "deneme 2", Address =
+        //    "Denizli, Zeytinköy", CustomerId = customerId });
         //    _orderWriteRepository.SaveAsync();
 
         //    //Order qq = await _orderReadRepository.GetByIdAsync("336b58bd-0485-4785-9b85-39afc7ba3050");
@@ -60,10 +53,45 @@ namespace ETicaretApi.Api.Controllers
         //    //    #endregion
         //}
         [HttpGet]
-        public async Task<IActionResult> GetByIdProduct()
+        public IActionResult Get()
         {
-            Order product = await _orderReadRepository.GetByIdAsync("336b58bd-0485-4785-9b85-39afc7ba3050");
-            return Ok(product);
+            return Ok(_productReadRepository.GetAll(false));
+        }
+        [HttpGet("{id}")]
+        public IActionResult Get(string id)
+        {
+            return Ok(_productReadRepository.GetByIdAsync(id,false));
+        }
+        [HttpPost]
+
+        public async Task<IActionResult> Post(VM_Create_Product model)
+        {
+            await _productWriteRepository.AddAsync(new()
+            {
+                Name = model.NAme,
+                Price = model.Price,
+                Stock = model.Stock
+            });
+            await _productWriteRepository.SaveAsync();
+            return Ok();
+        }
+        [HttpPut]
+        public async Task<IActionResult> Put(VM_Update_Product model)
+        {
+            Product product = await _productReadRepository.GetByIdAsync(model.Id);
+            product.Stock = model.Stock;
+            product.Price = model.Price;
+            product.Name = model.NAme;
+            await _productWriteRepository.SaveAsync();
+            return Ok();
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete (string id)
+        {
+            await _productWriteRepository.RemoveAsync(id);
+            await _productWriteRepository.SaveAsync();
+                 
+            return Ok();
         }
     }
 }
