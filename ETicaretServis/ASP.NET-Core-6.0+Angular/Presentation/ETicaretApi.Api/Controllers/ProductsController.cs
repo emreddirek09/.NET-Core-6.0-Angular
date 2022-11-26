@@ -20,15 +20,20 @@ namespace ETicaretApi.Api.Controllers
             _productReadRepository = productReadRepository;
         }
 
-        [HttpGet]
+        //[HttpGet]
         //public async Task Get()
         //{
-        //    var customerId = Guid.NewGuid();
-        //    _customerWriteRepository.AddAsync(new() { Id = customerId, Name = "Emre" });
-        //    _orderWriteRepository.AddAsync(new() { Description = "deneme 1", Address = "Aydın, Efeler", CustomerId = customerId });
-        //    _orderWriteRepository.AddAsync(new() { Description = "deneme 2", Address =
-        //    "Denizli, Zeytinköy", CustomerId = customerId });
-        //    _orderWriteRepository.SaveAsync();
+        //    //var customerId = Guid.NewGuid();
+        //    //_customerWriteRepository.AddAsync(new() { Id = customerId, Name = "Emre" });
+        //    //_orderWriteRepository.AddAsync(new() { Description = "deneme 1", Address = "Aydın, Efeler", CustomerId = customerId });
+        //    //_orderWriteRepository.AddAsync(new()
+        //    //{
+        //    //    Description = "deneme 2",
+        //    //    Address =
+        //    //"Denizli, Zeytinköy",
+        //    //    CustomerId = customerId
+        //    //});
+        //    //_orderWriteRepository.SaveAsync();
 
         //    //Order qq = await _orderReadRepository.GetByIdAsync("336b58bd-0485-4785-9b85-39afc7ba3050");
         //    //qq.Address = "Antalya";
@@ -40,14 +45,14 @@ namespace ETicaretApi.Api.Controllers
         //    //   _productWriteRepository.AddAsync(new() { Name = "C Product", Price = 1.500F, Stock = 10 });
         //    //   _productWriteRepository.SaveAsync();
 
-        //    //   await _productWriteRepository.AddRangeAsync(new()
-        //    //   {
-        //    //       new (){Id=Guid.NewGuid(),Name="Product 1",Price=100,CreateDate=DateTime.UtcNow,Stock=10},
-        //    //       new (){Id=Guid.NewGuid(),Name="Product 2",Price=120,CreateDate=DateTime.UtcNow,Stock=20},
-        //    //       new (){Id=Guid.NewGuid(),Name="Product 3",Price=130,CreateDate=DateTime.UtcNow,Stock=15},
-        //    //       new (){Id=Guid.NewGuid(),Name="Product 4",Price=140,CreateDate=DateTime.UtcNow,Stock=80}
-        //    //   });
-        //    //   var count = await _productWriteRepository.SaveAsync();
+        //    await _productWriteRepository.AddRangeAsync(new()
+        //       {
+        //           new (){Id=Guid.NewGuid(),Name="Product 1",Price=100,CreateDate=DateTime.UtcNow,Stock=10},
+        //           new (){Id=Guid.NewGuid(),Name="Product 2",Price=120,CreateDate=DateTime.UtcNow,Stock=20},
+        //           new (){Id=Guid.NewGuid(),Name="Product 3",Price=130,CreateDate=DateTime.UtcNow,Stock=15},
+        //           new (){Id=Guid.NewGuid(),Name="Product 4",Price=140,CreateDate=DateTime.UtcNow,Stock=80}
+        //       });
+        //    var count = await _productWriteRepository.SaveAsync();
 
         //    // */
         //    //    #endregion
