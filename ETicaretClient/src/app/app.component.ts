@@ -15,5 +15,5 @@ export class AppComponent {
       , { messageType: ToastrServiceMessageTpe.Info, position: ToastrPosition.BottomLeft });
   }
 }
-$.get("https://localhost:7075/api/Products", data => { console.log(data) })
+// $.get("https://localhost:7075/api/Products", data => { console.log(data) })
 // $(document).ready((alert("dsasds")))

@@ -15,34 +15,47 @@ ${requsetParameter.baseUrl ? requsetParameter.baseUrl : this.baseUrl}/
 ${requsetParameter.controller}${requsetParameter.action ? `/${requsetParameter.action}` : ""}`;
   }
 
-  get<T>(requsetParameter: Partial<RequestParameters>, id?: string): Observable<T> {
+  get<T>(requsetParameter: Partial<RequestParameters>) {
     let url: string = "";
-    // url= `${this.baseUrl}/${controller}/${action}`
 
     if (requsetParameter.fullEndPoint)
       url = requsetParameter.fullEndPoint;
     else
-      url = `${this.url(requsetParameter)}${id ? `/${id}` : ""}`;
+      url = `${this.url(requsetParameter)}`
+
 
     return this.httpClient.get<T>(url, { headers: requsetParameter.headers })
 
   }
-  post<T>(requsetParameter: Partial<RequestParameters>) 
-  {
-    let url:string="";
+  post<T>(requsetParameter: Partial<RequestParameters>, body: Partial<T>): Observable<T> {
+    let url: string = "";
     if (requsetParameter.fullEndPoint)
       url = requsetParameter.fullEndPoint;
     else
       url = `${this.url(requsetParameter)}`;
- 
-  }
 
-  put() {
+    return this.httpClient.post<T>(url, body, { headers: requsetParameter.headers });
 
   }
 
-  delete() {
+  put<T>(requsetParameter: Partial<RequestParameters>, body: Partial<T>): Observable<T> {
 
+    let url: string = "";
+    if (requsetParameter.fullEndPoint)
+      url = requsetParameter.fullEndPoint;
+    else
+      url = `${this.url(requsetParameter)}`;
+
+    return this.httpClient.put<T>(url, body, { headers: requsetParameter.headers });
+  }
+
+  delete<T>(requsetParameter: Partial<RequestParameters>, id: string): Observable<T> {
+    let url: string = "";
+    if (requsetParameter.fullEndPoint)
+      url = requsetParameter.fullEndPoint;
+    else
+      url = `${this.url(requsetParameter)}/${id}`;
+    return this.httpClient.delete<T>(url, { headers: requsetParameter.headers });
   }
 }
 
