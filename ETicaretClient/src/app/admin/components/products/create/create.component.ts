@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { BaseComponent, SpinnerType } from 'src/app/base/base.component';
 import { CreateProduct } from 'src/app/constracts/create-product';
@@ -11,27 +11,44 @@ import { ProductService } from 'src/app/services/common/models/product.service';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent extends BaseComponent implements OnInit {
-  constructor(spiner:NgxSpinnerService, private productService:ProductService,private alertify:AlertifyService){
+  constructor(spiner: NgxSpinnerService, private productService: ProductService, private alertify: AlertifyService) {
     super(spiner);
   }
 
-  ngOnInit(): void {  }
+  ngOnInit(): void { }
 
-  create(Name:HTMLInputElement,Stock:HTMLInputElement,Price:HTMLInputElement){
-  
+  create(Name: HTMLInputElement, Stock: HTMLInputElement, Price: HTMLInputElement) {
+
     this.showSpinner(SpinnerType.BallSpinClockwiseFadeTotating);
-    const create_product:CreateProduct=new CreateProduct();
-    create_product.name= Name.value;
-    create_product.stock=parseInt(Stock.value);
-    create_product.price=parseFloat(Price.value);
+    const create_product: CreateProduct = new CreateProduct();
+    create_product.name = Name.value;
+    create_product.stock = parseInt(Stock.value);
+    create_product.price = parseFloat(Price.value);
 
-    this.productService.create(create_product,()=>{
-      this.hideSpinner(SpinnerType.BallSpinClockwiseFadeTotating);
-      this.alertify.message("Ürün eklendi.",{
-        dismissOthers:true,
-        messageType:MessageType.Success,
-        position:Position.TopRight
-      })
-    });
+    if (!Name.value) {
+      this.alertify.message("Lütfen ürün adın girin ülen.", {
+        dismissOthers: true,
+        messageType: MessageType.Error,
+        position: Position.Topceter
+      });
+      return;
+    } else {
+      this.productService.create(create_product, () => {
+        this.hideSpinner(SpinnerType.BallSpinClockwiseFadeTotating);
+        this.alertify.message("Ürün eklendi.", {
+          dismissOthers: true,
+          messageType: MessageType.Success,
+          position: Position.TopRight
+        })
+      }, errorMessage => {
+        this.alertify.message(errorMessage, {
+          dismissOthers: true,
+          messageType: MessageType.Error,
+          position: Position.Topceter
+        });
+      });
+    }
+
+
   }
 }

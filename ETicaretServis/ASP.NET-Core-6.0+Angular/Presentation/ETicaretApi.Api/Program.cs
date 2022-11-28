@@ -1,12 +1,15 @@
-
-
+ 
+using ETicaretApi.Application.Validators.Products;
 using ETicaretApi.Persistence;
-using Microsoft.Extensions.DependencyInjection;
+using FluentValidation.AspNetCore;
+using ETicaretApi.Infrastructure.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddPersistenceServices();
 // Add services to the container. 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options => options.Filters.Add<ValidationFilter>())
+    .AddFluentValidation(configuration => configuration.RegisterValidatorsFromAssemblyContaining<CreateProductValidator>())
+    .ConfigureApiBehaviorOptions(op=>op.SuppressModelStateInvalidFilter=true);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -32,4 +35,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+app.Run(); 

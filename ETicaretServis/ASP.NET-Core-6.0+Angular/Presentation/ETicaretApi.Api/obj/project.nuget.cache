@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "espyRsUvvfHoZgVHJAoeh61K+9mUTJYrz9Yy9ZJapYptewfd0slr+KBMy1BSb1OnjBHP/UPtXxqV57osRitPdQ==",
+  "dgSpecHash": "0r9va5uajNnsuW7qY3nUaoyoNuknLYZfwnCFB1xRKKVs/h/vj/G6zHnoq36dMY6T67cBMODCNO/xgkP65lJUrA==",
   "success": true,
   "projectFilePath": "C:\\Users\\emred\\source\\repos\\emreddirek09\\.NET-Core-6.0-Angular\\ETicaretServis\\ASP.NET-Core-6.0+Angular\\Presentation\\ETicaretApi.Api\\ETicaretApi.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\emred\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\emred\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\emred\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
+    "C:\\Users\\emred\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\emred\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.4.0\\fluentvalidation.dependencyinjectionextensions.11.4.0.nupkg.sha512",
     "C:\\Users\\emred\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\emred\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\emred\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
