@@ -11,6 +11,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { BaseComponent } from './base/base.component';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -23,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     NgxSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [{provide:"baseUrl",useValue:"https://localhost:7075/api",multi:true}],
   bootstrap: [AppComponent]
