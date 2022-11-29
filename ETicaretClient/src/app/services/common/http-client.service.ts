@@ -15,16 +15,17 @@ ${requsetParameter.baseUrl ? requsetParameter.baseUrl : this.baseUrl}/
 ${requsetParameter.controller}${requsetParameter.action ? `/${requsetParameter.action}` : ""}`;
   }
 
-  get<T>(requsetParameter: Partial<RequestParameters>) {
+  get<T>(requsetParameter: Partial<RequestParameters>, id?: string): Observable<T> {
     let url: string = "";
 
     if (requsetParameter.fullEndPoint)
       url = requsetParameter.fullEndPoint;
     else
-      url = `${this.url(requsetParameter)}`
+      url = `${this.url(requsetParameter)}${id ? `/${id}` : ""}
+      ${requsetParameter.queryString ? `?${requsetParameter.queryString}` : ""}`;
 
 
-    return this.httpClient.get<T>(url, { headers: requsetParameter.headers })
+    return this.httpClient.get<T>(url, { headers: requsetParameter.headers });
 
   }
   post<T>(requsetParameter: Partial<RequestParameters>, body: Partial<T>): Observable<T> {
@@ -32,7 +33,7 @@ ${requsetParameter.controller}${requsetParameter.action ? `/${requsetParameter.a
     if (requsetParameter.fullEndPoint)
       url = requsetParameter.fullEndPoint;
     else
-      url = `${this.url(requsetParameter)}`;
+      url = `${this.url(requsetParameter)}${requsetParameter.queryString ? `?${requsetParameter.queryString}` : ""}`;
 
     return this.httpClient.post<T>(url, body, { headers: requsetParameter.headers });
 
@@ -44,7 +45,7 @@ ${requsetParameter.controller}${requsetParameter.action ? `/${requsetParameter.a
     if (requsetParameter.fullEndPoint)
       url = requsetParameter.fullEndPoint;
     else
-      url = `${this.url(requsetParameter)}`;
+      url = `${this.url(requsetParameter)}${requsetParameter.queryString ? `?${requsetParameter.queryString}` : ""}`;
 
     return this.httpClient.put<T>(url, body, { headers: requsetParameter.headers });
   }
@@ -54,7 +55,7 @@ ${requsetParameter.controller}${requsetParameter.action ? `/${requsetParameter.a
     if (requsetParameter.fullEndPoint)
       url = requsetParameter.fullEndPoint;
     else
-      url = `${this.url(requsetParameter)}/${id}`;
+      url = `${this.url(requsetParameter)}/${id}${requsetParameter.queryString ? `?${requsetParameter.queryString}` : ""}`;
     return this.httpClient.delete<T>(url, { headers: requsetParameter.headers });
   }
 }
@@ -63,6 +64,7 @@ ${requsetParameter.controller}${requsetParameter.action ? `/${requsetParameter.a
 export class RequestParameters {
   controller?: string;
   action?: string;
+  queryString?: string;
   headers?: HttpHeaders;
   baseUrl?: string;
   fullEndPoint?: string;

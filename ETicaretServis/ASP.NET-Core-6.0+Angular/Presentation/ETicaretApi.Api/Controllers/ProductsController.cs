@@ -1,9 +1,11 @@
 ﻿using ETicaretApi.Application.Repositories;
+using ETicaretApi.Application.RequestParameters;
 using ETicaretApi.Application.ViewModels.Products;
 using ETicaretApi.Domain.Entities;
 using ETicaretApi.Persistence.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace ETicaretApi.Api.Controllers
 {
@@ -58,24 +60,33 @@ namespace ETicaretApi.Api.Controllers
         //    //    #endregion
         //}
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get([FromQuery] Pagination pagination)
         {
-            return Ok(_productReadRepository.GetAll(false));
+            var totalCount = _productReadRepository.GetAll(false).Count();
+            var a = _productReadRepository.GetAll(false).Skip(pagination.Page * pagination.Size).Take(pagination.Size).Select(p => new
+            {
+                p.Id,
+                p.Name,
+                p.Stock,
+                p.Price,
+                p.CreateDate,
+                p.UpdateDate
+            }).ToList();
+            return Ok(new
+            {
+                totalCount,
+                a
+            });
         }
         [HttpGet("{id}")]
         public IActionResult Get(string id)
         {
-            return Ok(_productReadRepository.GetByIdAsync(id,false));
+            return Ok(_productReadRepository.GetByIdAsync(id, false));
         }
         [HttpPost]
 
         public async Task<IActionResult> Post(VM_Create_Product model)
         {
-
-            if (ModelState.IsValid)
-            {
-
-            }
             await _productWriteRepository.AddAsync(new()
             {
                 Name = model.NAme,
@@ -96,11 +107,11 @@ namespace ETicaretApi.Api.Controllers
             return Ok();
         }
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete (string id)
+        public async Task<IActionResult> Delete(string id)
         {
             await _productWriteRepository.RemoveAsync(id);
             await _productWriteRepository.SaveAsync();
-                 
+
             return Ok();
         }
     }
