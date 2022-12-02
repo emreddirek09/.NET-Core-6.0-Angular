@@ -1,4 +1,6 @@
 import { Directive, ElementRef, EventEmitter, HostListener, Input, Output, Renderer2 } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteDialagComponent, DeleteState } from 'src/app/dialogs/delete-dialag/delete-dialag.component';
 import { ProductService } from 'src/app/services/common/models/product.service';
 declare var $: any;
 
@@ -9,6 +11,7 @@ declare var $: any;
 export class DeleteDirective {
 
   constructor(private element: ElementRef, renderer: Renderer2,
+    public dialog: MatDialog,
     private productService: ProductService
   ) {
     const img = renderer.createElement("img");
@@ -21,10 +24,26 @@ export class DeleteDirective {
   @HostListener("click")
 
   async onClick() {
-    const td: HTMLTableCellElement = this.element.nativeElement;
-    await this.productService.delete(this.id);
-    $(td.parentElement).fadeOut(2000,()=>{
-      this.callbackList.emit();
+    this.openDialog(async () => {
+      const td: HTMLTableCellElement = this.element.nativeElement;
+      await this.productService.delete(this.id);
+      $(td.parentElement).fadeOut(2000, () => {
+        this.callbackList.emit();
+      });
+    });
+
+  }
+
+  openDialog(afterClosed: any): void {
+    const dialogRef = this.dialog.open(DeleteDialagComponent, {
+      width: '250px',
+      data: DeleteState.Yes,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result == DeleteState.Yes) {
+        afterClosed();
+      }
     });
   }
 }
