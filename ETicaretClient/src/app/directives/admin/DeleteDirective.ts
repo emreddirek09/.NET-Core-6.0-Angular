@@ -1,6 +1,9 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Directive, ElementRef, EventEmitter, HostListener, Input, Output, Renderer2 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteDialagComponent, DeleteState } from 'src/app/dialogs/delete-dialag/delete-dialag.component';
+import { AlertifyService, MessageType, Position } from 'src/app/services/admin/alertify.service';
+import { HttpClientService } from 'src/app/services/common/http-client.service';
 import { ProductService } from 'src/app/services/common/models/product.service';
 declare var $: any;
 
@@ -12,7 +15,8 @@ export class DeleteDirective {
 
   constructor(private element: ElementRef, renderer: Renderer2,
     public dialog: MatDialog,
-    private productService: ProductService
+    private AlertifyService: AlertifyService,
+    private httpClientService: HttpClientService
   ) {
     const img = renderer.createElement("img");
     img.setAttribute("src", "../../../../../assets/delete.png");
@@ -20,15 +24,30 @@ export class DeleteDirective {
   }
 
   @Input() id: string;
+  @Input() controllerInput: string;
   @Output() callbackList: EventEmitter<any> = new EventEmitter();
   @HostListener("click")
 
   async onClick() {
     this.openDialog(async () => {
       const td: HTMLTableCellElement = this.element.nativeElement;
-      await this.productService.delete(this.id);
-      $(td.parentElement).fadeOut(2000, () => {
-        this.callbackList.emit();
+      this.httpClientService.delete({
+        controller: this.controllerInput
+      }, this.id).subscribe(data => {
+        $(td.parentElement).fadeOut(2000, () => {
+          this.callbackList.emit();
+          this.AlertifyService.message("Ürün Başarıyla Silinmiştir.",{
+            dismissOthers:true,
+            messageType:MessageType.Success,
+            position:Position.Bottomceter
+          });
+        },(errorResponse:HttpErrorResponse)=>{
+          this.AlertifyService.message("Ürün Silinemedi. Teknik destek ile iletişime geçebilirsiniz.",{
+            dismissOthers:true,
+            messageType:MessageType.Error,
+            position:Position.Bottomceter
+          });
+        });
       });
     });
 
