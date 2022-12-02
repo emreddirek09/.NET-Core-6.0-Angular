@@ -21,10 +21,7 @@ ${requsetParameter.controller}${requsetParameter.action ? `/${requsetParameter.a
     if (requsetParameter.fullEndPoint)
       url = requsetParameter.fullEndPoint;
     else
-      url = `${this.url(requsetParameter)}${id ? `/${id}` : ""}
-      ${requsetParameter.queryString ? `?${requsetParameter.queryString}` : ""}`;
-
-
+      url = `${this.url(requsetParameter)}${id ? `/${id}` : ""}${requsetParameter.queryString ?`?${requsetParameter.queryString}` : ""}`;
     return this.httpClient.get<T>(url, { headers: requsetParameter.headers });
 
   }
@@ -33,7 +30,7 @@ ${requsetParameter.controller}${requsetParameter.action ? `/${requsetParameter.a
     if (requsetParameter.fullEndPoint)
       url = requsetParameter.fullEndPoint;
     else
-      url = `${this.url(requsetParameter)}${requsetParameter.queryString ? `?${requsetParameter.queryString}` : ""}`;
+      url = `${this.url(requsetParameter)}${requsetParameter.queryString ?`?${requsetParameter.queryString}` : ""}`;
 
     return this.httpClient.post<T>(url, body, { headers: requsetParameter.headers });
 
@@ -45,7 +42,7 @@ ${requsetParameter.controller}${requsetParameter.action ? `/${requsetParameter.a
     if (requsetParameter.fullEndPoint)
       url = requsetParameter.fullEndPoint;
     else
-      url = `${this.url(requsetParameter)}${requsetParameter.queryString ? `?${requsetParameter.queryString}` : ""}`;
+      url = `${this.url(requsetParameter)}${requsetParameter.queryString ?`?${requsetParameter.queryString}` : ""}`;
 
     return this.httpClient.put<T>(url, body, { headers: requsetParameter.headers });
   }
@@ -55,7 +52,7 @@ ${requsetParameter.controller}${requsetParameter.action ? `/${requsetParameter.a
     if (requsetParameter.fullEndPoint)
       url = requsetParameter.fullEndPoint;
     else
-      url = `${this.url(requsetParameter)}/${id}${requsetParameter.queryString ? `?${requsetParameter.queryString}` : ""}`;
+      url = `${this.url(requsetParameter)}/${id}${requsetParameter.queryString ?`?${requsetParameter.queryString}` : ""}`;
     return this.httpClient.delete<T>(url, { headers: requsetParameter.headers });
   }
 }

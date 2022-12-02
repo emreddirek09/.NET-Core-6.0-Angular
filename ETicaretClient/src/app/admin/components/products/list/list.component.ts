@@ -6,6 +6,7 @@ import { BaseComponent, SpinnerType } from 'src/app/base/base.component';
 import { List_Product } from 'src/app/constracts/List_Product';
 import { AlertifyService, MessageType, Position } from 'src/app/services/admin/alertify.service';
 import { ProductService } from 'src/app/services/common/models/product.service';
+declare var $: any;
 
 @Component({
   selector: 'app-list',
@@ -17,24 +18,27 @@ export class ListComponent extends BaseComponent implements OnInit {
     super(spinner)
   }
 
-  displayedColumns: string[] = ['Name', 'Stock', 'Price', 'CreateDate', 'UpdateDate'];
+  displayedColumns: string[] = ['Name', 'Stock', 'Price', 'CreateDate', 'UpdateDate', 'Edit', 'Delete'];
   dataSource: MatTableDataSource<List_Product> = null;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
+
   async getProducts() {
     this.showSpinner(SpinnerType.BallScaleMultiple);
-    const allProduct: {
-      totalCount: number, products: List_Product[]
-    } = await this.productService.read(this.paginator ? this.paginator.pageIndex : 0,
+    const allProduct: {totalCount: number, products: List_Product[]} = await this.productService.read(this.paginator ? this.paginator.pageIndex : 0,
       this.paginator ? this.paginator.pageSize : 5, (() => this.hideSpinner(SpinnerType.BallScaleMultiple)), errorMessage => this.alertyService.message(errorMessage, {
         dismissOthers: true,
         messageType: MessageType.Error,
         position: Position.Topceter
       }))
-    this.dataSource = new MatTableDataSource<List_Product>(allProduct.products);
+
+ 
+    console.log(  allProduct)
+    this.dataSource = new MatTableDataSource<List_Product>(allProduct.products); 
+   
     this.paginator.length = allProduct.totalCount;
-    this.dataSource.paginator = this.paginator;
-    console.log(this.dataSource)
+   
+
   }
 
   async ngOnInit() {
@@ -42,7 +46,8 @@ export class ListComponent extends BaseComponent implements OnInit {
   }
 
   async pageChanged() {
-    await await this.getProducts();
+    await this.getProducts();
   }
+  
 }
 

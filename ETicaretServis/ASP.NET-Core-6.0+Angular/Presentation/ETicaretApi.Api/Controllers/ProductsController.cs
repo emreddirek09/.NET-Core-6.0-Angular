@@ -63,7 +63,7 @@ namespace ETicaretApi.Api.Controllers
         public IActionResult Get([FromQuery] Pagination pagination)
         {
             var totalCount = _productReadRepository.GetAll(false).Count();
-            var a = _productReadRepository.GetAll(false).Skip(pagination.Page * pagination.Size).Take(pagination.Size).Select(p => new
+            var products = _productReadRepository.GetAll(false).Skip(pagination.Page * pagination.Size).Take(pagination.Size).Select(p => new
             {
                 p.Id,
                 p.Name,
@@ -75,7 +75,7 @@ namespace ETicaretApi.Api.Controllers
             return Ok(new
             {
                 totalCount,
-                a
+                products
             });
         }
         [HttpGet("{id}")]
