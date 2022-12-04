@@ -104,3 +104,4 @@ C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\AS
 C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Presentation\ETicaretApi.Api\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Presentation\ETicaretApi.Api\bin\Debug\net6.0\ETicaretApi.Infrastructure.dll
 C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Presentation\ETicaretApi.Api\bin\Debug\net6.0\ETicaretApi.Infrastructure.pdb
+C:\Users\emred\source\repos\emreddirek09\.NET-Core-6.0-Angular\ETicaretServis\ASP.NET-Core-6.0+Angular\Presentation\ETicaretApi.Api\bin\Debug\net6.0\ETicaretApi.Api.staticwebassets.runtime.json

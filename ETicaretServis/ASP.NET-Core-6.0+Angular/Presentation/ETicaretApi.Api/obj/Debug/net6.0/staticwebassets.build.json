@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "0+my56c8E0U2pDhez7cmsqDLrK0O7qgw/DqgKQLkK08=",
+  "Hash": "7coHEjMLr/M2mS8PVleDV6TBa65pRM3OzjzAZuA0cdE=",
   "Source": "ETicaretApi.Api",
   "BasePath": "_content/ETicaretApi.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ETicaretApi.Api\\wwwroot",
+      "Source": "ETicaretApi.Api",
+      "ContentRoot": "C:\\Users\\emred\\source\\repos\\emreddirek09\\.NET-Core-6.0-Angular\\ETicaretServis\\ASP.NET-Core-6.0+Angular\\Presentation\\ETicaretApi.Api\\wwwroot\\",
+      "BasePath": "_content/ETicaretApi.Api",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
