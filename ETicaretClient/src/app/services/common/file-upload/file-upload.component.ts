@@ -1,5 +1,6 @@
 import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { NgxFileDropEntry, FileSystemFileEntry } from 'ngx-file-drop';
 import { AlertifyService, MessageType, Position } from '../../admin/alertify.service';
 import { CustomeToastrService, ToastrPosition, ToastrServiceMessageTpe } from '../../ui/custome-toastr.service';
@@ -15,7 +16,8 @@ export class FileUploadComponent {
   constructor(
     private httpClientService: HttpClientService,
     private alertifService: AlertifyService,
-    private customToastService: CustomeToastrService
+    private customToastService: CustomeToastrService,
+    private dialog: MatDialog
   ) { }
 
   public files: NgxFileDropEntry[];
@@ -36,12 +38,13 @@ export class FileUploadComponent {
 
       });
     }
+
     this.httpClientService.post({
 
       controller: this.optionsFile.controller,
       action: this.optionsFile.action,
       queryString: this.optionsFile.queryString,
-      headers: new HttpHeaders({"responseType": 'blob'})
+      headers: new HttpHeaders({ "responseType": 'blob' })
 
     }, fileData).subscribe(data => {
 
@@ -80,8 +83,26 @@ export class FileUploadComponent {
       }
     });
 
+
+
+
+    // opeDialog(afterClosed: any): void {
+    //   const dialogRef = this.dialog.open(FileUploadComponent, {
+    //     width: '250px',
+    //     data: FileUploadDialogState.Yes,
+    //   });
+
+    //   dialogRef.afterClosed().subscribe(result => {
+    //     if (result == FileUploadDialogState.Yes) {
+    //       afterClosed();
+    //     }
+    //   });
+    // }
+
   }
 }
+
+
 
 export class FileUploadOptions {
   controller?: string;

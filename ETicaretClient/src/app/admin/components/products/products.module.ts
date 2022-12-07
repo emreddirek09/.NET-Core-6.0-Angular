@@ -13,7 +13,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { DeleteDirective } from 'src/app/directives/admin/DeleteDirective';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DeleteDialagComponent } from 'src/app/dialogs/delete-dialag/delete-dialag.component'; 
-import { FileUploadModule } from 'src/app/services/common/file-upload/file-upload.module';
+import { FileUploadModule } from 'src/app/services/common/file-upload/file-upload.module'; 
  
 
 
